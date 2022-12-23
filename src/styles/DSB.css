@@ -1,0 +1,51 @@
+:root{
+    --shadow: rgba(0, 0, 0, 0.2);
+    --mainSideBarWidth: 6vw;
+    --mainSideBarHeight: 90vh;
+    --sideBarContainerWidth: calc((var(--mainSideBarWidth) * 2));
+}
+
+.sideBarContainer{
+    width: var(--sideBarContainerWidth);
+    height: var(--mainSideBarHeight);
+    position: fixed;
+}
+
+.mainSideBar{
+    width: var(--mainSideBarWidth);
+    height: var(--mainSideBarHeight);
+    max-width: 50px;
+    min-width: 40px;
+    max-height: 700px;
+    min-height: 300px;
+    padding: .7%;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px var(--shadow);
+    background-color: white;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: start;
+    gap: 5%;
+}
+
+.btn{
+   flex-basis: 7%;
+   padding: unset;
+   border: none;
+   background-color: transparent;
+   text-align: center;
+}
+
+.secondSideBar{
+    
+}
+
+.icon{
+    font-size: xx-large;
+    transition: color .5s, font-size .5s;
+}
+.btn:hover .icon{
+    cursor: pointer;
+    color: blue;
+    font-size: 250%;
+}
