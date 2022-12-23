@@ -1,24 +1,20 @@
-import React from 'react'
+import {useState} from 'react'
 import {FiHome, FiDatabase, FiPlus, FiBarChart, FiUsers, FiSettings, FiHelpCircle} from "react-icons/fi"
 import "../../styles/DSB.css"
 
 
 const DoubleSidebar = () => {
+	const [icons, setIcons] = useState([<FiHome/>, <FiDatabase/>, <FiPlus/>, <FiBarChart/>, <FiUsers/>, <FiSettings/>, <FiHelpCircle/>]);
+
+	const getSimpleKey = () => Math.floor(Math.random() * 100000).toString(36);
+
 	return (
 		<>
-			<div className="sideBarContainer">
-				<div className="mainSideBar">
-					<button className="btn"><FiHome className="icon"/></button>
-					<button className="btn"><FiDatabase className="icon"/></button>
-					<button className="btn"><FiPlus className="icon"/></button>
-					<button className="btn"><FiBarChart className="icon"/></button>
-					<button className="btn"><FiUsers className="icon"/></button>
-					<button className="btn"><FiSettings className="icon"/></button>
-					<button className="btn"><FiHelpCircle className="icon"/></button>
-				</div>
-				<div className="secondSideBar">
-					xd
-				</div>
+			<div className="mainSideBar">
+				{icons.map(icon => <button key={getSimpleKey()} className="btn">{icon}</button>)}
+			</div>
+			<div className="secondSideBar">
+				xd
 			</div>
 		</>
 	)
