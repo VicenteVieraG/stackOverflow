@@ -1,13 +1,16 @@
 :root{
     --shadow: rgba(0, 0, 0, 0.2);
-    --mainSideBarWidth: 6vw;
-    --mainSideBarHeight: 90vh;
-    --sideBarContainerWidth: calc((var(--mainSideBarWidth) * 2));
+    --secondSideBarInitialPosition: xd;
+}
+
+.t{
+    width: 20vw;
+    height: 100vh;
 }
 
 .mainSideBar{
-    width: var(--mainSideBarWidth);
-    height: var(--mainSideBarHeight);
+    width: 10%;
+    height: 90vh;
     max-width: 50px;
     min-width: 40px;
     max-height: 700px;
@@ -40,6 +43,13 @@
     font-size: 250%;
 }
 
-.secondSideBar{
-    
+.mainSideBar > .secondSideBar{
+    width: inherit;
+    height: inherit;
+    max-width: inherit;
+    min-width: inherit;
+    padding: inherit;
+    background-color: black;
+    position: fixed;
+    left: calc(var(--Width))
 }
