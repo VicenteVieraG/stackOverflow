@@ -1,6 +1,9 @@
 :root{
     --shadow: rgba(0, 0, 0, 0.2);
-    --secondSideBarInitialPosition: xd;
+    --secondSB-L: ;
+    --secondSB-R: ;
+    --secondSB-T: ;
+    --secondSB-B: ;
 }
 
 .t{
@@ -43,13 +46,11 @@
     font-size: 250%;
 }
 
-.mainSideBar > .secondSideBar{
-    width: inherit;
-    height: inherit;
-    max-width: inherit;
-    min-width: inherit;
-    padding: inherit;
+.secondSideBar{
+    width: 60px;
+    height: 60px;
+    color: white;
     background-color: black;
     position: fixed;
-    left: calc(var(--Width))
+    left: calc(var(--secondSB-R) * 1px);
 }
