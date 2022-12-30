@@ -49,7 +49,6 @@ const SecondSideBar = ({compRef}) => {
 		return () => resizeObserver.disconnect();
 	}, []);
 
-	console.log("SECOND SIDEBAR LOADED")
 	return(
 		<>
 			<div className="secondSideBar">
