@@ -7,13 +7,12 @@
 }
 
 .mainSideBar{
-    width: 10%;
+    width: 10vw;
     height: 90vh;
-    max-width: 50px;
+    max-width: 70px;
     min-width: 40px;
     max-height: 700px;
     min-height: 365px;
-    padding: .7%;
     border-radius: 5px;
     box-shadow: 0 0 5px 2px var(--shadow);
     background-color: white;

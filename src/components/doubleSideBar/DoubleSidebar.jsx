@@ -28,13 +28,12 @@ const DoubleSidebar = () => {
 		const btns = document.getElementsByClassName("btn");
 		const passIdByRef = {id:0};
 		setID(btns, passIdByRef);
-		
-		console.log(btns)
 	}, []);
 
-	const handleClick = (e) => {
+	const handleClick = (e, dispatch) => {
 		console.log(e.target.id)
 		console.log(e.target)
+		dispatch({type: e.target.id})
 	}
 
 	const getSimpleKey = () => Math.floor(Math.random() * 100000).toString(36);

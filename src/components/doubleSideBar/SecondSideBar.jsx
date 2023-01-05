@@ -16,7 +16,7 @@ const reducer = (state, action) => {
 			const comp = document.getElementById("mainSB");
 			const root = document.querySelector(":root");
 
-			//Get the Component Measures and Setting CSS Varibles their Values 
+			//Get the Component Measures and Setting CSS Varibles their Values
 			const mainSbPosition = comp.getBoundingClientRect();
 			root.style.setProperty("--secondSB-L", mainSbPosition.left);
 			root.style.setProperty("--secondSB-R", mainSbPosition.right);
@@ -53,9 +53,9 @@ const SecondSideBar = ({compRef}) => {
 		<>
 			<div className="secondSideBar">
 				OLACRAYOLA
-			</div>		
+			</div>
 		</>
 	)
 }
 
-export default SecondSideBar
+export default SecondSideBar;
