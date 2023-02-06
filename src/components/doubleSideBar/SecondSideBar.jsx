@@ -53,7 +53,7 @@ const SecondSideBar = ({compRef, active}) => {
 	}, []);
 
 	useEffect(() => {
-		(active !== "0")? 
+		(active !== "7")? 
 		dispatch({type: "activate", secondSbRef}) 
 		: 
 		dispatch({type: "disable", secondSbRef});

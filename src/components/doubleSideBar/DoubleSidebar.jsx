@@ -3,10 +3,10 @@ import {FiHome, FiDatabase, FiPlus, FiBarChart, FiUsers, FiSettings, FiHelpCircl
 import SecondSideBar from './SecondSideBar';
 import "../../styles/DSB.css";
 
-const init = {type: "0"};
+const init = {type: "7"};
 
 const reducer = (state, action) => {
-	if(state.type === action.type) return {type: "0"};
+	if(state.type === action.type) return {type: "7"};
 	switch(action.type){
 		case "0": {
 			console.log("0")
