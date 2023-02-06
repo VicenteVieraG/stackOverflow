@@ -1,4 +1,4 @@
-import {useReducer, useEffect} from 'react'
+import {useReducer, useEffect, useRef} from 'react'
 import "../../styles/DSB.css"
 
 const init = () => {
@@ -18,25 +18,28 @@ const reducer = (state, action) => {
 
 			//Get the Component Measures and Setting CSS Varibles their Values
 			const mainSbPosition = comp.getBoundingClientRect();
-			root.style.setProperty("--secondSB-L", mainSbPosition.left);
 			root.style.setProperty("--secondSB-R", mainSbPosition.right);
-			root.style.setProperty("--secondSB-T", mainSbPosition.top);
-			root.style.setProperty("--secondSB-B", mainSbPosition.bottom);
-
-			console.log(getComputedStyle(root).getPropertyValue("--secondSB-L"))
-			console.log(getComputedStyle(root).getPropertyValue("--secondSB-R"))
-			console.log(getComputedStyle(root).getPropertyValue("--secondSB-T"))
-			console.log(getComputedStyle(root).getPropertyValue("--secondSB-B"))
 
 			return {position: mainSbPosition};
+		};
+		case "activate": {
+			console.log("Active")
+			action.secondSbRef.current.style.setProperty("--width", "auto");
+			break;
+		};
+		case "disable": {
+			console.log("Disable")
+			action.secondSbRef.current.style.setProperty("--width", "0");
+			break;
 		};
 		default: console.log("No Action Found");
 	}
 };
 
-const SecondSideBar = ({compRef}) => {
+const SecondSideBar = ({compRef, active}) => {
 	const [state, dispatch] = useReducer(reducer, null, init);
-
+	const secondSbRef = useRef(null);
+	
 	useEffect(() => {
 		//Exit if the Component Is not Ready
 		if(!compRef.current) return;
@@ -49,10 +52,35 @@ const SecondSideBar = ({compRef}) => {
 		return () => resizeObserver.disconnect();
 	}, []);
 
+	useEffect(() => {
+		(active !== "0")? 
+		dispatch({type: "activate", secondSbRef}) 
+		: 
+		dispatch({type: "disable", secondSbRef});
+	},[active]);
+
 	return(
 		<>
-			<div className="secondSideBar">
-				OLACRAYOLA
+			<div ref={secondSbRef} className="secondSideBar">
+				<div>OLACRAYOLA</div>
+				<div>OLACRAYOLA</div>
+				<div>OLACRAYOLA</div>
+				<div>OLACRAYOLA</div>
+				<div>OLACRAYOLA</div>
+				<div>OLACRAYOLA</div>
+				<div>OLACRAYOLA</div>
+				<div>OLACRAYOLA</div>
+				<div>OLACRAYOLA</div>
+				<div>OLACRAYOLA</div>
+				<div>OLACRAYOLA</div>
+				<div>OLACRAYOLA</div>
+				<div>OLACRAYOLA</div>
+				<div>OLACRAYOLA</div>
+				<div>OLACRAYOLA</div>
+				<div>OLACRAYOLA</div>
+				<div>OLACRAYOLA</div>
+				<div>OLACRAYOLA</div>
+				<div>OLACRAYOLA</div>
 			</div>
 		</>
 	)

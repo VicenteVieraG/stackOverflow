@@ -1,9 +1,5 @@
 :root{
-    --shadow: rgba(0, 0, 0, 0.2);
-    --secondSB-L: ;
     --secondSB-R: ;
-    --secondSB-T: ;
-    --secondSB-B: ;
 }
 
 .mainSideBar{
@@ -14,7 +10,7 @@
     max-height: 700px;
     min-height: 365px;
     border-radius: 5px;
-    box-shadow: 0 0 5px 2px var(--shadow);
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
     background-color: white;
     position: fixed;
     display: flex;
@@ -41,10 +37,15 @@
 }
 
 .secondSideBar{
-    width: 60px;
-    height: 60px;
-    color: white;
-    background-color: black;
+    --width: 0;
+
+    width: var(--width);
+    height: 90vh;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    overflow-y: scroll;
+    color: black;
+    background-color: white;
     position: fixed;
     left: calc(var(--secondSB-R) * 1px);
 }
